@@ -1,0 +1,27 @@
+name: Dysfunctional
+version: 0.1.0
+description: A simple blog theme for the Dysfunction Room podcast
+icon: rebel
+author:
+  name: Sam Anderson
+  email: samel.2710@gmail.com
+homepage: https://github.com/sam-anderson/grav-theme-dysfunctional
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/sam-anderson/grav-theme-dysfunctional/issues
+readme: https://github.com/sam-anderson/grav-theme-dysfunctional/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
