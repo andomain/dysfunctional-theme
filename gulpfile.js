@@ -10,12 +10,28 @@ var scss = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
+const themeName = 'dysfunctional'
+
+const config = {
+    base: {
+        src: './',
+        dest: '../public/user/themes/' + themeName + '/',        
+    },
+    js: 'js/**/*.js',
+    scss: {
+        src: 'scss/style.scss',
+        name: 'style.css'
+    }
+    
+}
+
+
 gulp.task('js', () => {
-    processJs('main.js', 'src/js/**/*.js', 'js');
+    processJs('main.js', config.base.src + config.js, config.dest + 'js/');
 });
 
 gulp.task('scss', () => {
-	gulp.src('src/scss/**/*.scss')
+	gulp.src(config.base.src + config.scss.src)
 	    .pipe(sourcemaps.init({ loadMaps: true }))
     	.pipe(scss())
         .on('error', handleError)
@@ -23,7 +39,7 @@ gulp.task('scss', () => {
         	browsers: ['last 2 versions', 'Explorer 9'],
         	cascade: false
     	}))
-	    .pipe(rename('style.css'))
+	    .pipe(rename(config.scss.name))
         .pipe(cleanCSS({debug: true}, (details) =>  {
             console.log('\nCSS Cleaned');
             console.log('========================================');
@@ -34,33 +50,39 @@ gulp.task('scss', () => {
             console.log('========================================\n');
         }))
     	.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('css'));
+		.pipe(gulp.dest(config.base.dest + 'css/'));
 
 });
 
 gulp.task('images', () => {
-	gulp.src('src/img/*.png')
+	gulp.src(config.base.src + 'images/*.png')
 		.pipe(imagemin())
-		.pipe(gulp.dest('images'));
+		.pipe(gulp.dest(config.base.dest + 'images/'));
 });
 
 gulp.task('html', () => {
-	gulp.src('src/templates/**/*.html.twig')
-		.pipe(gulp.dest('templates/'));
+	gulp.src(config.base.src + 'templates/**/*.html.twig')
+		.pipe(gulp.dest(config.base.dest + 'templates/'));
 });
 
 gulp.task('watch', () => {
-	gulp.watch('src/templates/**/*.html.twig', ['html', 'patch-bump']);
-	gulp.watch('src/scss/**/*.scss', ['scss', 'patch-bump']);
-	gulp.watch('src/js/**/*.js', ['js', 'test', 'patch-bump']);
-	gulp.watch('src/img/**', ['images', 'patch-bump']);
+	gulp.watch(config.base.src + 'templates/**/*.html.twig', ['html', 'patch-bump']);
+	gulp.watch(config.base.src + 'scss/**/*.scss', ['scss', 'patch-bump']);
+	gulp.watch(config.base.src + 'js/**/*.js', ['js', 'test', 'patch-bump']);
+	gulp.watch(config.base.src + 'img/**', ['images', 'patch-bump']);
+    gulp.watch(config.base.src + 'theme_files/*', ['themefiles']);
+});
+
+gulp.task('themefiles', () => {
+    gulp.src(config.base.src + 'theme_files/**')
+        .pipe(gulp.dest(config.base.dest));
 });
 
 // Default task
 // ========================================================================================
 
 // gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'watch', 'connect', 'test']);
-gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'watch']);
+gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'themefiles', 'watch']);
 
 // Utilities
 // ========================================================================================
