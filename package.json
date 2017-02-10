@@ -1,6 +1,6 @@
 {
   "name": "dysfunctional",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "description": "A basic Grav theme",
   "main": "main.js",
   "scripts": {
