@@ -82,6 +82,7 @@ gulp.task('watch', () => {
 	gulp.watch(config.base.src + 'js/**/*.js', ['js', 'test', 'patch-bump']);
 	gulp.watch(config.base.src + 'img/**', ['images', 'patch-bump']);
     gulp.watch(config.base.src + 'theme_files/*', ['themefiles']);
+    gulp.watch(config.plugins.src, ['plugins']);
 });
 
 gulp.task('themefiles', () => {
@@ -93,7 +94,7 @@ gulp.task('themefiles', () => {
 // ========================================================================================
 
 // gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'watch', 'connect', 'test']);
-gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'themefiles', 'watch']);
+gulp.task('default', ['js', 'plugins', 'scss', 'images', 'html', 'patch-bump', 'themefiles', 'watch']);
 
 // Utilities
 // ========================================================================================

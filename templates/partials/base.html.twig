@@ -38,7 +38,7 @@
                 {{ config.site.title }}
             </a>
             {% block header_navigation %}
-            <nav class="main-nav">
+            <nav class="main-nav cf">
                 {% include 'partials/navigation.html.twig' %}
             </nav>
             {% endblock %}
@@ -57,7 +57,6 @@
 {% block footer %}
     <div class="footer text-center">
         <div class="wrapper padding">
-            {% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
         </div>
     </div>
 {% endblock %}
