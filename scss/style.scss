@@ -1,1 +1,64 @@
+@import 'variables';
 @import 'vendor/init.scss';
+@import 'mixins.scss';
+
+* {
+	font-family: 'Sansita', sans-serif;
+}
+
+h1,
+h2 {
+	text-align: center;
+}
+
+.text--centered {
+	text-align: center;
+}
+
+.person {
+	@include clearfix();
+
+	margin-bottom: 25px;
+	width: 100%;
+
+	&__image,
+	&__info {
+		display: table-cell;
+		float: left;
+		height: 100%;
+	}
+
+	&__image {
+		border-radius: 50%;
+		width: 30%;
+	}
+
+	&__info {
+		padding: 10px 5px;
+		text-align: center;
+		width: 70%;
+	}
+
+	&__name,
+	&__strapline {
+		margin: 0;
+	}
+
+	&__name {
+		font-size: 1.5rem;
+	}
+
+	&__strapline {
+		color: $light-grey;
+		font-size: 1.1rem;
+
+		&:before,
+		&:after {
+			content: '"';
+		}
+	}
+
+	&__bio {
+
+	}
+}

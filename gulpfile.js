@@ -21,10 +21,16 @@ const config = {
     scss: {
         src: 'scss/style.scss',
         name: 'style.css'
+    },
+    img: {
+        src: 'images/**/*',
+        dest: '../public/user/pages/images'
+    },
+    plugins: {
+        src: 'plugins/**/*',
+        dest: '../public/user/plugins'
     }
-    
 }
-
 
 gulp.task('js', () => {
     processJs('main.js', config.base.src + config.js, config.dest + 'js/');
@@ -54,10 +60,15 @@ gulp.task('scss', () => {
 
 });
 
+gulp.task('plugins', () => {
+    gulp.src(config.plugins.src)
+        .pipe(gulp.dest(config.plugins.dest));
+});
+
 gulp.task('images', () => {
-	gulp.src(config.base.src + 'images/*.png')
+	gulp.src(config.base.src + 'images/**/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest(config.base.dest + 'images/'));
+		.pipe(gulp.dest(config.img.dest));
 });
 
 gulp.task('html', () => {
