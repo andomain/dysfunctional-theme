@@ -33,8 +33,13 @@ h2 {
 	}
 
 	&__image {
+		box-shadow: rgba(30,30,30,.3) 10px 10px 20px 6px;
 		border-radius: 50%;
 		width: 30%;
+
+		&:nth-child(2n) {
+			box-shadow: rgba(30,30,30,.3) -10px 10px 20px 6px;
+		}
 	}
 
 	&__info {
