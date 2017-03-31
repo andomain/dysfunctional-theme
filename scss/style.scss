@@ -35,6 +35,7 @@ h2 {
 	&__image {
 		box-shadow: rgba(30,30,30,.3) 10px 10px 20px 6px;
 		border-radius: 50%;
+		margin-top: 30px;
 		width: 30%;
 
 		&:nth-child(2n) {
@@ -46,6 +47,14 @@ h2 {
 		padding: 10px 5px;
 		text-align: center;
 		width: 70%;
+
+		&:nth-child(2n) .person__bio {
+			text-align: right;
+		}
+
+		&:nth-child(2n+1) .person__bio {
+			text-align: left;
+		}
 	}
 
 	&__name,
@@ -68,6 +77,7 @@ h2 {
 	}
 
 	&__bio {
+		margin: 20px 30px 0;
 
 	}
 }

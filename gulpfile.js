@@ -60,7 +60,7 @@ gulp.task('scss', () => {
 
 });
 
-gulp.task('plugins', () => {
+gulp.task('resetPlugins', () => {
     gulp.src(config.plugins.src)
         .pipe(gulp.dest(config.plugins.dest));
 });
@@ -94,7 +94,7 @@ gulp.task('themefiles', () => {
 // ========================================================================================
 
 // gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'watch', 'connect', 'test']);
-gulp.task('default', ['js', 'plugins', 'scss', 'images', 'html', 'patch-bump', 'themefiles', 'watch']);
+gulp.task('default', ['js', 'scss', 'images', 'html', 'patch-bump', 'themefiles', 'watch']);
 
 // Utilities
 // ========================================================================================
