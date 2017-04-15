@@ -19,7 +19,7 @@ const config = {
     },
     js: 'js/**/*.js',
     scss: {
-        src: 'scss/style.scss',
+        src: 'scss/*.scss',
         name: 'style.css'
     },
     img: {
