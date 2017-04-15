@@ -1,0 +1,118 @@
+.logo {
+	display: block;
+	margin: 0 auto;
+	width: 45%;
+}
+
+.intro,
+h1,
+h2 {
+	text-align: center;
+}
+
+.person {
+	@include clearfix();
+
+	margin-bottom: 25px;
+	width: 100%;
+
+	&__image,
+	&__info {
+		display: table-cell;
+		float: left;
+		height: 100%;
+		text-align: left;
+	}
+
+	&__image {
+		box-shadow: rgba(30,30,30,.3) 10px 10px 20px 6px;
+		border-radius: 50%;
+		margin-top: 30px;
+		width: 30%;
+
+		&--right {
+			box-shadow: rgba(30,30,30,.3) -10px 10px 20px 6px;
+			float: right;
+		}
+	}
+
+	&__info {
+		padding: 10px 5px;
+		width: 70%;
+	}
+
+	&__name,
+	&__strapline {
+		margin: 0;
+	}
+
+	&__name {
+		font-size: 1.5rem;
+	}
+
+	&__strapline {
+		color: $light-grey;
+		font-size: 1.1rem;
+
+		&:before,
+		&:after {
+			content: '"';
+		}
+	}
+
+	&__bio {
+		font-size: 16px;
+		margin: 20px 30px 0;
+	}
+
+	&:nth-child(2n+1) {
+		.person__bio{
+			text-align: right;
+		}
+	}
+}
+
+@media screen and (max-width: 799px){
+	.person {
+		&__info {
+			width: 100%;
+		
+			.person__bio {
+				text-align: center;
+				margin: 0 0 30px;
+				width: 100%;
+			}
+		}
+
+		&__image {
+			box-shadow: rgba(30, 30, 30, 0.3) 0px 0px 20px 6px;
+			float: none;
+			margin: 0 auto;
+		}
+
+		&:nth-child(2n+1) {
+			.person__bio{
+				text-align: center;
+			}
+			
+		}
+	}
+}
+
+@media screen and (min-width: 401px) and (max-width: 799px){
+	.person__image {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.person {
+		&__image {
+			width: 90%;
+		}
+
+		&__bio {
+			font-size: 14px;
+		}
+	}
+}

@@ -26,6 +26,17 @@
     {% endblock %}
     {{ assets.js() }}
 
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96588739-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
@@ -33,8 +44,7 @@
 {% block header %}
     <div class="header">
         <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
+            <a class="header__text left" href="{{ base_url == '' ? '/' : base_url }}">
                 {{ config.site.title }}
             </a>
             {% block header_navigation %}
@@ -55,10 +65,12 @@
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-        </div>
-    </div>
+    <footer>
+        <hr>
+        <a class="footer__link footer__link--home" href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title }}</a></span>
+        <hr>
+        <a class="footer__link footer__link--reference" href="www.andomain.co.uk">Website by Andomain</a></span>
+    </footer>
 {% endblock %}
 
 {% block bottom %}

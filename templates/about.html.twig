@@ -1,0 +1,38 @@
+{% extends 'partials/base.html.twig' %}
+
+	{% set collection = page.collection() %}
+
+	{% block content %}
+	<section class="bios">
+	    <h1>The Regulars</h1>
+		<p class="text--centered">Whats a pub without its regulars? A shit pub thats what!</p>
+		<div class="person">
+			<img class="person__image" src="user/pages/images/bio/luci.jpg">
+			<div class="person__info">
+				<h1 class="person__name">General Lucifer</h1>
+				<h2 class="person__strapline">I invented the dirty bidet</h2>
+				<div class="person__bio">Key thumper, punsmith, flâneur, stage show off, twat. Winner of The Blog North Award for Best Writing on a Blog 2014. My book, <a href="https://www.amazon.co.uk/Pantone-Blues-G-Lucifer-ebook/dp/B008HSH42O">Pantone Blues</a>, is out on Amazon.</div>
+			</div>
+		</div>
+		<div class="person">
+			<img class="person__image person__image--right" src="user/pages/images/bio/sam.jpg">
+			<div class="person__info">
+				<h1 class="person__name">Sam Anderson</h1>
+				<h2 class="person__strapline">Turn off that Enya CD, I'm going to cry</h2>
+				<div class="person__bio">Sound maker, word writer, nice things maker, bike rider, distance runner, occasional on-stage dick-around-er, slacker.....all round bell end.<br/><br/>Gets stressed out about not reading self help books.</div>
+			</div>
+		</div>
+		<div class="person">
+			<img class="person__image" src="user/pages/images/bio/andrew.jpg">
+			<div class="person__info">
+				<h1 class="person__name">Andrew Rodgers</h1>
+				<h2 class="person__strapline">The World's Least Convincing Canadian</h2>
+				<div class="person__bio">
+					<p>Away from the glorious tedium that is pushing pens in the pursuit of saving witless and disinterested from themselves, I've sought out the heady heights of middle class adventures.</p>
+					<p>I've stood on the shoulders of lesser giants, trespassed into  the realm of moderate but easily managed danger, chased tame dragons around the long corners of the night and demonstrated extreme caution as I've run away from bears.</p>
+					<p>Most of what I pass off as creativity is the product of an inability to follow a recipe as closely as the author originally intended.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% endblock %}

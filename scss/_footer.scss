@@ -1,0 +1,19 @@
+footer {
+	background-color: $theme-main;
+	min-height: 150px;
+	padding: 20px;
+
+	.footer__link {
+		color: #fff;
+		display: block;
+		text-align: center;
+
+		&--reference {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			color: #1F8CD6;
+		}
+	}
+}

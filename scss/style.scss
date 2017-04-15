@@ -1,14 +1,12 @@
 @import 'variables';
 @import 'vendor/init.scss';
 @import 'mixins.scss';
+@import 'header.scss';
+@import 'home.scss';
+@import 'footer.scss';
 
 * {
 	font-family: 'Sansita', sans-serif;
-}
-
-h1,
-h2 {
-	text-align: center;
 }
 
 .cf {
@@ -19,65 +17,12 @@ h2 {
 	text-align: center;
 }
 
-.person {
-	@include clearfix();
-
-	margin-bottom: 25px;
-	width: 100%;
-
-	&__image,
-	&__info {
-		display: table-cell;
-		float: left;
-		height: 100%;
-	}
-
-	&__image {
-		box-shadow: rgba(30,30,30,.3) 10px 10px 20px 6px;
-		border-radius: 50%;
-		margin-top: 30px;
-		width: 30%;
-
-		&:nth-child(2n) {
-			box-shadow: rgba(30,30,30,.3) -10px 10px 20px 6px;
-		}
-	}
-
-	&__info {
-		padding: 10px 5px;
-		text-align: center;
-		width: 70%;
-
-		&:nth-child(2n) .person__bio {
-			text-align: right;
-		}
-
-		&:nth-child(2n+1) .person__bio {
-			text-align: left;
-		}
-	}
-
-	&__name,
-	&__strapline {
-		margin: 0;
-	}
-
-	&__name {
-		font-size: 1.5rem;
-	}
-
-	&__strapline {
-		color: $light-grey;
-		font-size: 1.1rem;
-
-		&:before,
-		&:after {
-			content: '"';
-		}
-	}
-
-	&__bio {
-		margin: 20px 30px 0;
-
-	}
+.wrapper {
+	margin: 0 auto;
+	max-width: 1024px;
+    width: 100%;
 }
+
+
+
+
